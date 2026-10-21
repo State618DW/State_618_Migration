@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Apply • State 618</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #30100d, #090807 45%, #030303);
+      color: #f6ead2;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #6c4b1f;
+      background: #080706ef;
+    }
+
+    header a {
+      color: #e6ad48;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    main {
+      max-width: 850px;
+      margin: auto;
+      padding: 38px 16px 70px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 8vw, 68px);
+      margin: 8px 0;
+      color: #e6ad48;
+    }
+
+    p {
+      color: #bfb3a0;
+      line-height: 1.6;
+    }
+
+    form {
+      background: linear-gradient(145deg, #17120d, #080706);
+      border: 1px solid #705326;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 25px 70px #000;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: #050505;
+      color: white;
+      border: 1px solid #5b4728;
+      border-radius: 7px;
+      padding: 14px;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .full {
+      margin-top: 18px;
+    }
+
+    .upload {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px dashed #a77a30;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 17px;
+      border: 2px solid #e1aa46;
+      border-radius: 7px;
+      background: linear-gradient(#a21d11, #5e0805);
+      color: #ffdb87;
+      font-weight: 900;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 800;
+    }
+
+    .ok {
+      color: #80cf91;
+    }
+
+    .err {
+      color: #ff8b8b;
+    }
+
+    .id-help-button {
+      width: auto;
+      margin: 0;
+      padding: 6px 10px;
+      font-size: 12px;
+      border: 1px solid #e6ad48;
+      background: #17120d;
+      color: #e6ad48;
+    }
+
+    #gameIdHelp {
+      display: none;
+      grid-column: 1 / -1;
+      background: #0b0907;
+      border: 1px solid #705326;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    #gameIdHelp h3 {
+      color: #e6ad48;
+      margin-top: 0;
+    }
+
+    #gameIdHelp img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      border: 1px solid #705326;
+      margin-top: 10px;
+    }
+
+    .close-help {
+      width: auto;
+      display: inline-block;
+      margin-top: 12px;
+      padding: 9px 18px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      #gameIdHelp {
+        grid-column: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">← BACK TO STATE 618</a>
+  </header>
+
+  <main>
+
+    <div style="font-weight:900;letter-spacing:.22em;color:#c99742;">
+      RZN • STATE 618
+    </div>
+
+    <h1>MIGRATION APPLICATION</h1>
+
+    <p>
+      Complete the form below and send your application to the State 618 Migration Team.
+    </p>
+
+    <form id="applicationForm" method="post">
+
+      <div class="grid">
+
+        <label class="full">
+          🌐 LANGUAGE • 언어 • 語言 • 言語 • IDIOMA • اللغة
+
+          <select id="languageSelector" name="language">
+            <option value="en">🇬🇧 English</option>
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="zh-TW">🇹🇼 繁體中文</option>
+            <option value="zh-CN">🇨🇳 简体中文</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="th">🇹🇭 ไทย</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="tr">🇹🇷 Türkçe</option>
+            <option value="ru">🇷🇺 Русский</option>
+            <option value="ar">🇸🇦 العربية</option>
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="id">🇮🇩 Bahasa Indonesia</option>
+          </select>
+        </label>
+
+        <label>
+          Username / in-game name
+          <input
+            name="username"
+            type="text"
+            required
+          >
+        </label>
+
+        <label>
+          In-game ID
+
+          <button
+            class="id-help-button"
+            type="button"
+            id="gameIdHelpButton"
+          >
+            ❓ WHERE IS MY ID?
+          </button>
+
+          <input
+            id="game_id"
+            name="game_id"
+            type="text"
+            required
+          >
+        </label>
+
+        <div id="gameIdHelp">
+
+          <h3>❓ WHERE TO FIND YOUR GAME ID</h3>
+
+          <p>
+            Open your profile in Dark War and look beside
+            <strong>ID:</strong>
+          </p>
+
+          <img
+            src="Screenshot_20260917_045005_Dark War.jpg"
+            alt="Dark War Game ID location"
+          >
+
+          <button
+            class="close-help"
+            type="button"
+            id="closeGameIdHelp"
+          >
+            CLOSE
+          </button>
+
+        </div>
+
+        <label>
+          Current state
+
+          <input
+            name="current_state"
+            type="text"
+            required
+          >
+        </label>
+
+        <label>
+          Current clan
+
+          <input
+            name="current_clan"
+            type="text"
+            placeholder="e.g. RZN"
+            required
+          >
+        </label>
+
+        <label>
+          Clan you want to apply to
+
+          <select name="preferred_clan" required>
+            <option value="">Select clan</option>
+            <option value="RZN">RZN</option>
+            <option value="UNQ">UNQ</option>
+            <option value="3311">3311</option>
+            <option value="ROD!">ROD!</option>
+            <option value="RAW$">RAW$</option>
+            <option value="KNT">KNT</option>
+          </select>
+        </label>
+
+        <label>
+          Backup clan
+
+          <select name="backup_clan" required>
+            <option value="">Select backup</option>
+            <option value="RZN">RZN</option>
+            <option value="UNQ">UNQ</option>
+            <option value="3311">3311</option>
+            <option value="ROD!">ROD!</option>
+            <option value="RAW$">RAW$</option>
+            <option value="KNT">KNT</option>
+          </select>
+        </label>
+
+        <label>
+          Watchtower level
+
+          <select name="watchtower_level" required>
+            <option value="">Select Watchtower level</option>
+
+            <option value="1">Watchtower 1</option>
+            <option value="2">Watchtower 2</option>
+            <option value="3">Watchtower 3</option>
+            <option value="4">Watchtower 4</option>
+            <option value="5">Watchtower 5</option>
+            <option value="6">Watchtower 6</option>
+            <option value="7">Watchtower 7</option>
+            <option value="8">Watchtower 8</option>
+            <option value="9">Watchtower 9</option>
+            <option value="10">Watchtower 10</option>
+            <option value="11">Watchtower 11</option>
+            <option value="12">Watchtower 12</option>
+            <option value="13">Watchtower 13</option>
+            <option value="14">Watchtower 14</option>
+            <option value="15">Watchtower 15</option>
+            <option value="16">Watchtower 16</option>
+            <option value="17">Watchtower 17</option>
+            <option value="18">Watchtower 18</option>
+            <option value="19">Watchtower 19</option>
+            <option value="20">Watchtower 20</option>
+            <option value="21">Watchtower 21</option>
+            <option value="22">Watchtower 22</option>
+            <option value="23">Watchtower 23</option>
+            <option value="24">Watchtower 24</option>
+            <option value="25">Watchtower 25</option>
+            <option value="26">Watchtower 26</option>
+            <option value="27">Watchtower 27</option>
+            <option value="28">Watchtower 28</option>
+            <option value="29">Watchtower 29</option>
+            <option value="30">Watchtower 30</option>
+
+            <option value="Industrial 1">Industrial 1</option>
+            <option value="Industrial 2">Industrial 2</option>
+            <option value="Industrial 3">Industrial 3</option>
+            <option value="Industrial 4">Industrial 4</option>
+            <option value="Industrial 5">Industrial 5</option>
+          </select>
+        </label>
+
+        <label>
+          Overall power
+
+          <input
+            name="overall_power"
+            type="text"
+            placeholder="e.g. 250M"
+            required
+          >
+        </label>
+
+        <label>
+          First march power
+
+          <input
+            name="first_march_power"
+            type="text"
+            placeholder="e.g. 35M"
+            required
+          >
+        </label>
+
+        <label>
+          Second march power
+
+          <input
+            name="second_march_power"
+            type="text"
+            placeholder="e.g. 28M"
+            required
+          >
+        </label>
+
+        <label>
+          Third march power
+
+          <input
+            name="third_march_power"
+            type="text"
+            placeholder="e.g. 20M"
+            required
+          >
+        </label>
+
+      </div>
+
+      <label class="full">
+        Why do you want to join State 618?
+
+        <textarea
+          name="reason"
+          rows="5"
+          required
+        ></textarea>
+      </label>
+
+      <label class="upload">
+        Upload bag screenshots
+
+        <input
+          id="images"
+          name="images"
+          type="file"
+          accept=".jpg,.jpeg,.png,.webp"
+          multiple
+        >
+      </label>
+
+      <button
+        id="submitButton"
+        type="submit"
+      >
+        SUBMIT APPLICATION
+      </button>
+
+      <div id="message"></div>
+
+    </form>
+
+  </main>
+
+  <script>
+    const gameIdHelpButton =
+      document.getElementById("gameIdHelpButton");
+
+    const closeGameIdHelp =
+      document.getElementById("closeGameIdHelp");
+
+    const gameIdHelp =
+      document.getElementById("gameIdHelp");
+
+    gameIdHelpButton.addEventListener("click", function () {
+      if (gameIdHelp.style.display === "block") {
+        gameIdHelp.style.display = "none";
+      } else {
+        gameIdHelp.style.display = "block";
+      }
+    });
+
+    closeGameIdHelp.addEventListener("click", function () {
+      gameIdHelp.style.display = "none";
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="translate.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
